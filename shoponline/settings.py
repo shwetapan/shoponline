@@ -132,6 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
 ]
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL = '/profile/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
