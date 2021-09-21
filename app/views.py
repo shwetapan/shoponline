@@ -22,7 +22,7 @@ class ProductView(View):
     mobiles = Product.objects.filter(category = 'M')
     if request.user.is_authenticated:
       totalitem = len(Cart.objects.filter(user=request.user))
-      return render(request,'app/home.html',{'topwears':topwears,'bottomwears':bottomwears,'mobiles':mobiles,'totalitem':totalitem})
+    return render(request,'app/home.html',{'topwears':topwears,'bottomwears':bottomwears,'mobiles':mobiles,'totalitem':totalitem})
 
 # def product_detail(request):
 #  return render(request, 'app/productdetail.html')
