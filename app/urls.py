@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from .forms import LoginForm, MyPasswordChangeForm, MyPasswordResetForm,MySetPasswordForm
+from django.views.static import serve
 
 urlpatterns = [
     
@@ -34,5 +35,6 @@ urlpatterns = [
    
     path('logout/',auth_views.LogoutView.as_view(next_page='login'),name='logout'),
     path('registration/', views.customerregistrationView.as_view(), name='customerregistration'),
+    re_path(r'^media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
     
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] 
