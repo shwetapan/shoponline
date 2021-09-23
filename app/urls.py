@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from .forms import LoginForm, MyPasswordChangeForm, MyPasswordResetForm,MySetPasswordForm
 from django.views.static import serve
+from django.urls import re_path
 
 urlpatterns = [
     
